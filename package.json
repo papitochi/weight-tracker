@@ -1,0 +1,14 @@
+{
+  "name": "weight-tracking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "dev"
+  },
+  "author": "",
+  "license": "ISC"
+}

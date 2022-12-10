@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weight Tracker</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="weight-input">
+				<form>
+					<input
+						type="text"
+						placeholder="kg"
+						maxlength="5"
+						id="weight-input"
+						onchange="checkValidity()"
+						title="Range is 10-200"
+					/>
+					<input type="button" value="Submit" id="submit" />
+					<input type="button" value="Reset" id="reset" />
+					<div
+						id="confirm"
+						class="hidden"
+						title="Right click to go back to reset"
+					>
+						Confirm?
+					</div>
+				</form>
+			</div>
+			<div class="weight-stat">
+				<!-- <div class="stat">
+					<div class="date"></div>
+					<div class="weight"></div>
+				</div> -->
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500&display=swap");
+
+* {
+	box-sizing: border-box;
+	font-family: "Red Hat Display", sans-serif;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	background: -webkit-linear-gradient(to right, #2c3e50, #21618b);
+	background: linear-gradient(to right, #2c3e50, #21618b);
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: clamp(4vw, 8vw, 4em);
+}
+
+form {
+	position: relative;
+	gap: 0.3em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+form > * {
+	border-radius: 10%;
+	font-size: 1.3em;
+	padding: 0.2em;
+	transition: translate 1s ease;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1, 1);
+	border: none;
+}
+
+form > *:focus {
+	outline: 2px solid white;
+}
+
+form > *:hover {
+	translate: 0px -6px;
+	transition: translate 1s ease;
+}
+
+#confirm {
+	flex-direction: column;
+	height: 1.7em;
+	width: 4.5em;
+	/* bottom: 0; */
+	right: -35px;
+	position: absolute;
+	display: flex;
+	background: white;
+}
+
+.stat:hover::after {
+	right: 1.7em;
+	position: absolute;
+	content: "x";
+	margin-top: -0.1em;
+	margin-left: 0.3em;
+	color: gray;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type="button"],
+#confirm {
+	cursor: pointer;
+}
+
+input[type="text"] {
+	max-width: 3.5em;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.weight-stat {
+	position: relative;
+	gap: 0.3em;
+	min-height: 8em;
+	color: white;
+	font-weight: 500;
+	width: 12em;
+	padding: 0.5em;
+	display: grid;
+	border: 2px solid rgba(255, 253, 255, 0.2);
+	border-radius: 1em;
+	background: rgba(255, 253, 255, 0.04);
+	backdrop-filter: blur(400px);
+	-webkit-backdrop-filter: blur(400px);
+}
+
+#submit {
+	background: linear-gradient(to right, rgb(7, 94, 255), #3577a3);
+	color: white;
+	text-shadow: 2px 0px #000;
+}
+
+.weight-input {
+	width: 12em;
+	display: flex;
+}
+
+.stat {
+	align-self: center;
+	width: 8.5em;
+	height: 1em;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	/* gap: 1.5em; */
+	text-align: left;
+}
+
+@media screen and (max-width: 500px) {
+	html,
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.container {
+		flex-direction: column;
+		justify-content: center;
+	}
+}

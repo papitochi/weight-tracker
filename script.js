@@ -64,6 +64,14 @@ button.addEventListener("click", () => {
 	weight_input.value = "";
 });
 
+const stat = document.querySelectorAll(".stat");
+stat.forEach((element) => {
+	element.addEventListener("click", () => {
+		weight_stat.removeChild(element);
+		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
+	});
+});
+
 document.addEventListener("keydown", (e) => {
 	if (e.code == "Enter") {
 		button.click();

@@ -94,6 +94,8 @@ confirm_btn.addEventListener("click", () => {
 	});
 	weight_input.value = "";
 	window.localStorage.removeItem("weight-stat");
+	reset_btn.classList.toggle("hidden");
+	confirm_btn.classList.toggle("hidden");
 });
 
 confirm_btn.addEventListener("contextmenu", (e) => {

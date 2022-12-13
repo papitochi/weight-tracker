@@ -138,3 +138,13 @@ input[type="text"] {
 		justify-content: center;
 	}
 }
+
+@media screen and (max-width: 350px) {
+	form {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.weight-stat {
+		width: calc(70% + 20vw);
+	}
+}

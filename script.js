@@ -53,6 +53,7 @@ button.addEventListener("click", () => {
 		newStat.appendChild(date);
 		weight.className = "weight";
 		date.className = "date";
+		date.setAttribute("title", new Date());
 		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 		weight_stat.appendChild(newStat);
 		weight.append(parseFloat(weight_input.value) + "kg");
@@ -86,6 +87,12 @@ const reset_btn = document.getElementById("reset"),
 reset_btn.addEventListener("click", () => {
 	reset_btn.classList.toggle("hidden");
 	confirm_btn.classList.toggle("hidden");
+	setTimeout(() => {
+		if (!confirm_btn.classList.contains("hidden")) {
+			reset_btn.classList.toggle("hidden");
+			confirm_btn.classList.toggle("hidden");
+		}
+	}, 5000);
 });
 
 confirm_btn.addEventListener("click", () => {

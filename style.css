@@ -55,10 +55,7 @@ form > *:hover {
 	flex-direction: column;
 	height: 1.7em;
 	width: 4.5em;
-	/* bottom: 0; */
-	right: -35px;
-	position: absolute;
-	display: flex;
+	position: relative;
 	background: white;
 }
 
@@ -82,9 +79,7 @@ input[type="text"] {
 }
 
 .hidden {
-	visibility: hidden;
-	opacity: 0;
-	transition: opacity 1s;
+	display: none;
 }
 
 .weight-stat {

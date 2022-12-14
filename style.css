@@ -37,8 +37,6 @@ form > * {
 	font-size: 1.3em;
 	padding: 0.2em;
 	transition: translate 1s ease;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: translateZ(0) scale(1, 1);
 	border: none;
 }
 
@@ -52,7 +50,6 @@ form > *:hover {
 }
 
 #confirm {
-	flex-direction: column;
 	height: 1.7em;
 	width: 4.5em;
 	position: relative;
@@ -116,7 +113,6 @@ input[type="text"] {
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
-	/* gap: 1.5em; */
 	text-align: left;
 }
 

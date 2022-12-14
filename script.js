@@ -87,12 +87,6 @@ const reset_btn = document.getElementById("reset"),
 reset_btn.addEventListener("click", () => {
 	reset_btn.classList.toggle("hidden");
 	confirm_btn.classList.toggle("hidden");
-	setTimeout(() => {
-		if (!confirm_btn.classList.contains("hidden")) {
-			reset_btn.classList.toggle("hidden");
-			confirm_btn.classList.toggle("hidden");
-		}
-	}, 5000);
 });
 
 confirm_btn.addEventListener("click", () => {
@@ -109,4 +103,13 @@ confirm_btn.addEventListener("contextmenu", (e) => {
 	reset_btn.classList.toggle("hidden");
 	confirm_btn.classList.toggle("hidden");
 	e.preventDefault();
+});
+
+document.addEventListener("click", (e) => {
+	if (!confirm_btn.classList.contains("hidden")) {
+		if (e.target.id != "reset") {
+			reset_btn.classList.toggle("hidden");
+			confirm_btn.classList.toggle("hidden");
+		}
+	}
 });

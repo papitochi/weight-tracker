@@ -38,6 +38,20 @@ const submit = document.getElementById("submit"),
 
 weight_stat.innerHTML = window.localStorage.getItem("weight-stat");
 
+function setAverage() {
+	const weights = document.querySelectorAll(".weight");
+	const avg_weight = document.getElementById("average-weight");
+	var average = 0;
+	if (weights.length != 0) {
+		weights.forEach((element) => {
+			average += parseInt(element.innerHTML.replace("kg", ""));
+		});
+		avg_weight.innerHTML = Math.round(average / weights.length) + "kg";
+	} else {
+		avg_weight.innerHTML = 0 + "kg";
+	}
+}
+
 submit.addEventListener("click", () => {
 	if (
 		checkValidity() &&
@@ -60,12 +74,14 @@ submit.addEventListener("click", () => {
 		newStat.addEventListener("click", () => {
 			weight_stat.removeChild(newStat);
 		});
+		setAverage();
 	}
 	weight_input.value = "";
 	window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 });
 
 const stat = document.querySelectorAll(".stat");
+
 stat.forEach((element) => {
 	element.addEventListener("click", () => {
 		weight_stat.removeChild(element);
@@ -97,6 +113,7 @@ confirm_btn.addEventListener("click", () => {
 	window.localStorage.removeItem("weight-stat");
 	reset_btn.classList.toggle("hidden");
 	confirm_btn.classList.toggle("hidden");
+	setAverage();
 });
 
 confirm_btn.addEventListener("contextmenu", (e) => {
@@ -113,3 +130,5 @@ document.addEventListener("click", (e) => {
 		}
 	}
 });
+
+setAverage();

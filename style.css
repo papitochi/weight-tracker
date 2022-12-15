@@ -38,6 +38,7 @@ form > * {
 	padding: 0.2em;
 	transition: translate 1s ease;
 	border: none;
+	width: 3.5em;
 }
 
 form > *:focus {
@@ -54,6 +55,14 @@ form > *:hover {
 	width: 4.5em;
 	position: relative;
 	background: white;
+}
+
+.average-weight {
+	margin-top: 0.3em;
+	color: white;
+	display: flex;
+	justify-content: center;
+	gap: 0.3em;
 }
 
 .stat:hover::after {

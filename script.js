@@ -86,6 +86,7 @@ stat.forEach((element) => {
 	element.addEventListener("click", () => {
 		weight_stat.removeChild(element);
 		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
+		setAverage();
 	});
 });
 

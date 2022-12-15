@@ -51,6 +51,7 @@ function setAverage() {
 		avg_weight.innerHTML = 0 + "kg";
 	}
 }
+const stat = document.querySelectorAll(".stat");
 
 submit.addEventListener("click", () => {
 	if (
@@ -73,14 +74,13 @@ submit.addEventListener("click", () => {
 		date.append(new Date().toLocaleDateString());
 		newStat.addEventListener("click", () => {
 			weight_stat.removeChild(newStat);
+			window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 		});
 		setAverage();
 	}
 	weight_input.value = "";
 	window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 });
-
-const stat = document.querySelectorAll(".stat");
 
 stat.forEach((element) => {
 	element.addEventListener("click", () => {

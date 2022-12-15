@@ -60,9 +60,9 @@ submit.addEventListener("click", () => {
 		newStat.addEventListener("click", () => {
 			weight_stat.removeChild(newStat);
 		});
-		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 	}
 	weight_input.value = "";
+	window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 });
 
 const stat = document.querySelectorAll(".stat");

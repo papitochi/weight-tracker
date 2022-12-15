@@ -30,7 +30,7 @@ function checkValidity() {
 	}
 	return true;
 }
-const button = document.getElementById("submit"),
+const submit = document.getElementById("submit"),
 	date = document.querySelector(".date"),
 	weight = document.querySelector(".weight"),
 	weight_input = document.getElementById("weight-input"),
@@ -38,7 +38,7 @@ const button = document.getElementById("submit"),
 
 weight_stat.innerHTML = window.localStorage.getItem("weight-stat");
 
-button.addEventListener("click", () => {
+submit.addEventListener("click", () => {
 	if (
 		checkValidity() &&
 		parseFloat(weight_input.value) <= 200 &&
@@ -54,13 +54,13 @@ button.addEventListener("click", () => {
 		weight.className = "weight";
 		date.className = "date";
 		date.setAttribute("title", new Date());
-		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 		weight_stat.appendChild(newStat);
 		weight.append(parseFloat(weight_input.value) + "kg");
 		date.append(new Date().toLocaleDateString());
 		newStat.addEventListener("click", () => {
 			weight_stat.removeChild(newStat);
 		});
+		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 	}
 	weight_input.value = "";
 });
@@ -75,7 +75,7 @@ stat.forEach((element) => {
 
 document.addEventListener("keydown", (e) => {
 	if (e.code == "Enter") {
-		button.click();
+		submit.click();
 		window.localStorage.setItem("weight-stat", weight_stat.innerHTML);
 		e.preventDefault();
 	}

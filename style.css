@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500&display=swap");
-
+@keyframes shake {
+	0%,
+	100% {
+		translate: 0px;
+	}
+	25% {
+		translate: 2px 0px;
+	}
+	75% {
+		translate: -2px 0px;
+	}
+}
 * {
 	box-sizing: border-box;
 	font-family: "Red Hat Display", sans-serif;
@@ -33,7 +44,9 @@ form {
 }
 
 form > * {
-	border-radius: 10%;
+	color: #000;
+	appearance: none;
+	border-radius: 0.3em;
 	font-size: 1.3em;
 	padding: 0.2em;
 	transition: translate 1s ease;
@@ -55,6 +68,10 @@ form > *:hover {
 	width: 4.5em;
 	position: relative;
 	background: white;
+}
+
+.shake {
+	animation: shake 0.5s;
 }
 
 .average-weight {
@@ -128,6 +145,8 @@ input[type="text"] {
 @media screen and (max-width: 500px) {
 	html,
 	body {
+		background: -webkit-linear-gradient(to right, #2c3e50, #21618b);
+		background: linear-gradient(to right, #2c3e50, #21618b);
 		display: flex;
 		justify-content: center;
 		align-items: center;

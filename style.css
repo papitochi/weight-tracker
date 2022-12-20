@@ -83,7 +83,7 @@ form > *:hover {
 }
 
 .stat:hover::after {
-	right: 1.7em;
+	right: 0.5em;
 	position: absolute;
 	content: "x";
 	margin-top: -0.1em;
@@ -134,7 +134,7 @@ input[type="text"] {
 
 .stat {
 	align-self: center;
-	width: 8.5em;
+	width: 90%;
 	height: 1em;
 	cursor: pointer;
 	display: flex;
@@ -143,15 +143,6 @@ input[type="text"] {
 }
 
 @media screen and (max-width: 500px) {
-	html,
-	body {
-		background: -webkit-linear-gradient(to right, #2c3e50, #21618b);
-		background: linear-gradient(to right, #2c3e50, #21618b);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	.container {
 		flex-direction: column;
 		justify-content: center;

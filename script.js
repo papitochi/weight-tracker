@@ -78,7 +78,10 @@ submit.addEventListener("click", () => {
 		});
 		setAverage();
 	} else {
-		weight_input.style.animation = "shake 0.5s";
+		weight_input.classList.remove("shake");
+		setTimeout(() => {
+			weight_input.classList.add("shake");
+		}, 10);
 	}
 	weight_input.value = "";
 	window.localStorage.setItem("weight-stat", weight_stat.innerHTML);

@@ -2,13 +2,13 @@
 @keyframes shake {
 	0%,
 	100% {
-		translate: 0px;
+		transform: translateX(0px);
 	}
 	25% {
-		translate: 2px 0px;
+		transform: translateX(2px);
 	}
 	75% {
-		translate: -2px 0px;
+		transform: translateX(-2px);
 	}
 }
 * {
@@ -71,7 +71,7 @@ form > *:hover {
 }
 
 .shake {
-	animation: shake 0.5s;
+	animation: shake 0.2s;
 }
 
 .average-weight {

@@ -14,11 +14,20 @@ function checkValidity() {
 	}
 	return true;
 }
+
 const submit = document.getElementById("submit"),
 	date = document.querySelector(".date"),
 	weight = document.querySelector(".weight"),
 	weight_input = document.getElementById("weight-input"),
 	weight_stat = document.querySelector(".weight-stat");
+
+function clearStats() {
+	Array.from(weight_stat.childNodes).forEach((element) => {
+		weight_stat.removeChild(element);
+	});
+	weight_input.value = "";
+	window.localStorage.removeItem("weight-stat");
+}
 
 weight_stat.innerHTML = window.localStorage.getItem("weight-stat");
 
@@ -30,11 +39,17 @@ function setAverage() {
 		weights.forEach((element) => {
 			average += parseInt(element.innerHTML.replace("kg", ""));
 		});
-		avg_weight.innerHTML = Math.round(average / weights.length) + "kg";
+		avg_weight.innerHTML = (average / weights.length).toFixed(1) + "kg";
 	} else {
 		avg_weight.innerHTML = 0 + "kg";
 	}
+	return (average / weights.length).toFixed(1);
 }
+
+if (setAverage() === "NaN" || setAverage() > 200 || setAverage() < 10) {
+	clearStats();
+}
+
 const stat = document.querySelectorAll(".stat");
 
 submit.addEventListener("click", () => {
@@ -98,11 +113,7 @@ reset_btn.addEventListener("click", () => {
 });
 
 confirm_btn.addEventListener("click", () => {
-	Array.from(weight_stat.childNodes).forEach((element) => {
-		weight_stat.removeChild(element);
-	});
-	weight_input.value = "";
-	window.localStorage.removeItem("weight-stat");
+	clearStats();
 	reset_btn.classList.toggle("hidden");
 	confirm_btn.classList.toggle("hidden");
 	setAverage();

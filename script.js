@@ -37,7 +37,7 @@ function setAverage() {
 	var average = 0;
 	if (weights.length != 0) {
 		weights.forEach((element) => {
-			average += parseInt(element.innerHTML.replace("kg", ""));
+			average += parseFloat(element.innerHTML.replace("kg", ""));
 		});
 		avg_weight.innerHTML = (average / weights.length).toFixed(1) + "kg";
 	} else {
